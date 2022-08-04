@@ -43,9 +43,9 @@ skim(penguins)
 ```
 
 ```{r}
+#| include: false
 #pairs plot, if you use :: you can see whats avaiable
 
-#| include: false
 GGally::ggpairs(penguins)
 ```
 
@@ -54,7 +54,6 @@ GGally::ggpairs(penguins)
 Flipper length by species
 
 ```{r}
-
 #| fig.cap: "Figure Caption :)"
 ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
   geom_jitter(width = 0.2,
