@@ -1,0 +1,39 @@
+---
+title: "Day 4 - Exploring Data"
+author: "Ruth Enriquez"
+format: html
+editor: visual
+---
+
+```{r}
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+library(GGally) # install.packages("GGally")
+library(skimr) # install.packages("skimr")
+
+#appear vs not appear, code chunk options, in R they go in the {r}, quarto its #| warning: false, use #| echo: false so code doesn't show up
+```
+
+Exploratory Data Viz
+
+Check out your data a bit:
+
+```{r}
+#| include: false
+
+# Tell me the column names
+names(penguins)
+
+# What are the dimensions
+dim(penguins)
+
+# Can you show me the first 6 lines?
+head(penguins)
+
+# Can you show me the last 6 lines?
+tail(penguins)
+```
+
+in console view(penguins) to bring up data-set
