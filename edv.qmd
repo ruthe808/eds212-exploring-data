@@ -37,3 +37,43 @@ tail(penguins)
 ```
 
 in console view(penguins) to bring up data-set
+
+```{r}
+skim(penguins)
+```
+
+```{r}
+#pairs plot, if you use :: you can see whats avaiable
+
+#| include: false
+GGally::ggpairs(penguins)
+```
+
+## Jitterplot
+
+Flipper length by species
+
+```{r}
+
+#| fig.cap: "Figure Caption :)"
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+  geom_jitter(width = 0.2,
+              alpha = 0.5,
+              aes(color = species)) + 
+  geom_boxplot(fill = NA) +
+  theme_light() +
+  scale_color_manual(values = c("darkorchid4", "cyan4", "goldenrod")) +
+  labs(x = "Penguin Species",
+       y = "Flipper Species",
+       title = "Palmer Archipelago Penguin Flippers")
+
+#alpha is used for transparency
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm)) +
+  geom_histogram(aes(fill = species), color ="magenta") +
+  facet_wrap(~species, ncol = 1)
+```
+
+
